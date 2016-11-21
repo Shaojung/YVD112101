@@ -3,6 +3,7 @@ package com.example.user.yvd112101;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -22,5 +23,9 @@ public class MainActivity extends AppCompatActivity {
         lv.setAdapter(adapter);
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("Show!");
+        return super.onCreateOptionsMenu(menu);
+    }
 }
