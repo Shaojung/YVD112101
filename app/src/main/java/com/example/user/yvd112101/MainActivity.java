@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     ListView lv;
@@ -15,14 +16,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lv = (ListView) findViewById(R.id.listView);
-
+        MyAdapter adapter = new MyAdapter();
+        lv.setAdapter(adapter);
     }
 
     class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
-            return 0;
+            return 50;
         }
 
         @Override
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+            TextView tv = new TextView(MainActivity.this);
+            tv.setText("Hello:" + position);
+            return tv;
         }
     }
 }
