@@ -18,34 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lv = (ListView) findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter();
+        MyAdapter adapter = new MyAdapter(MainActivity.this, fruits);
         lv.setAdapter(adapter);
     }
 
-    class MyAdapter extends BaseAdapter {
 
-        @Override
-        public int getCount() {
-            return fruits.length;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater inflater = getLayoutInflater();
-            View v = inflater.inflate(R.layout.myitem, null);
-            TextView tv = (TextView) v.findViewById(R.id.textView);
-            tv.setText(fruits[position]);
-            return v;
-        }
-    }
 }
